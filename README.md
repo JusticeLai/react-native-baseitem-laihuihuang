@@ -9,6 +9,9 @@
 * [版本更新记录](#版本更新记录)
 * [结语](#结语)
 
+[弹框](https://github.com/JusticeLai/react-native-baseitem-laihuihuang/blob/master/BaseAlert.md)
+
+
 ### 编译问题
 
 * 因为适配了Android O的通知栏，所以依赖的v7包版本比较高`appcompat-v7:26.1.0`
