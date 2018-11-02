@@ -89,33 +89,8 @@ manager.setApkName("appupdate.apk")
 ```
 * 兼容Android N 及以上版本，在你应用的`Manifest.xml`添加如下代码
 
-```
-<--! android:authorities="${applicationId}" 
-这个值必须与DownloadManager中的authorities一致（不设置则为应用包名）-->
 
-<provider
-    android:name="android.support.v4.content.FileProvider"
-    android:authorities="${applicationId}"
-    android:exported="false"
-    android:grantUriPermissions="true">
-    <meta-data
-        android:name="android.support.FILE_PROVIDER_PATHS"
-        android:resource="@xml/file_paths_public" />
-</provider>
-```
-* 资源文件`res/xml/file_paths_public.xml`内容
 
-```
-<?xml version="1.0" encoding="utf-8"?>
-<paths>
-    <external-path
-        name="app_update_external"
-        path="/" />
-    <external-cache-path
-        name="app_update_cache"
-        path="/" />
-</paths>
-```
 * 兼容Android O及以上版本，需要设置`NotificationChannel(通知渠道)`；库中已经写好可以前往查阅[NotificationUtil.java](https://github.com/azhon/AppUpdate/blob/master/appupdate/src/main/java/com/azhon/appupdate/utils/NotificationUtil.java)
 * 温馨提示：升级对话框中的内容是可以上下滑动的哦😄！
 * 如果需要实现自己一套下载过程，只需要继承`BaseHttpDownloadManager` 并使用listener更新进度
@@ -135,31 +110,6 @@ public class MyDownload extends BaseHttpDownloadManager {}
     * 对话框背景图片支持自定义了
     * 支持中/英文双语
     
-* v1.5.6
-    * 新增Android N uri authorities授权设置
-    
-* v1.5.5
-    * 解决部分下载地址无法获取到文件大小问题
-   
-* v1.5.3
-    * 修复权限申请返回结果数组为空的情况   
-
-* v1.5.2
-    * 添加对话框按钮点击事件监听
-    * 启动下载服务时增加了通知栏开关状态检查，结果以打印日志的形式反馈
-
-* v1.5.1
-    * 修复部分手机频繁更新通知栏造成通知栏卡顿问题
-	
-* v1.5.0
-    * 添加强制更新逻辑
-    
-* v1.4.0
-	* 修复在Android O设备上更新进度手机一直震动问题
-    
-* v1.2.0
-	* 添加是否提示用户 "当前已是最新版本" 的布尔值 
-	* 修复部分手机请求权限时抛出：`Only fullscreen opaque activities can request orientation`
 
 ### 结语
 * 如果大家在使用的过程中有什么问题，欢迎提Issues告知。
