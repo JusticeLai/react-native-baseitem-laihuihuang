@@ -3,7 +3,7 @@
 * [编译问题](#编译问题)
 * [效果图](#效果图)
 * [功能介绍](#功能介绍)
-* [DownloadManager](#downloadmanager配置文档)
+* [BaseAlert](#downloadmanager配置文档)
 * [使用步骤](#使用步骤)
 * [Demo下载体验](#demo下载体验)
 * [版本更新记录](#版本更新记录)
@@ -30,8 +30,29 @@
 * [x] 支持中/英文双语
 * [x] 支持自定内置对话框的样式
 
+### 使用步骤
+* `build.gradle`进行依赖
 
-### DownloadManager：配置文档
+	```
+	implementation 'com.azhon:appupdate:1.6.0'
+	```
+* 所有版本：[点击查看](https://dl.bintray.com/azhon/azhon/com/azhon/appupdate/)
+
+* 简单用法：创建`DownloadManager`，更多用法请查看Demo
+
+```
+ render() {
+        return (
+            <View style={{flex: 1}}>
+                <BaseAlert AlertType="PassWordAlert" ref={c => this.alertView = c}/>
+            </View>
+        )
+    }
+```
+* 显示对话框   this.alertView.showAlert()
+* 隐藏对话框   this.alertView.showAlert()
+
+### BaseAlert：配置文档
 > 初始化使用`DownloadManager.getInstance(this)`
 
 属性      | 描述		| 默认值  | 是否必须设置
@@ -50,27 +71,7 @@ apkSize | 新版本的安装包大小（单位M）  | null | false
 authorities | 兼容Android N uri授权  | 应用包名 | false
 
 
-### 使用步骤
-* `build.gradle`进行依赖
 
-	```
-	implementation 'com.azhon:appupdate:1.6.0'
-	```
-* 所有版本：[点击查看](https://dl.bintray.com/azhon/azhon/com/azhon/appupdate/)
-
-* 简单用法：创建`DownloadManager`，更多用法请查看Demo
-
-```
-DownloadManager manager = DownloadManager.getInstance(this);
-manager.setApkName("appupdate.apk")
-        .setApkUrl("https://raw.githubusercontent.com/azhon/AppUpdate/master/apk/appupdate.apk")
-        .setDownloadPath(Environment.getExternalStorageDirectory() + "/AppUpdate")
-        .setSmallIcon(R.mipmap.ic_launcher)
-        //可设置，可不设置
-        .setConfiguration(configuration)
-        .download();
-```
-* 兼容Android N 及以上版本，在你应用的`Manifest.xml`添加如下代码
 
 
 
