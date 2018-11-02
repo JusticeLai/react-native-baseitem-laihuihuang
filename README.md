@@ -31,15 +31,11 @@
 * [x] 支持自定内置对话框的样式
 
 ### 使用步骤
-* `build.gradle`进行依赖
-
-	```
-	implementation 'com.azhon:appupdate:1.6.0'
-	```
+* 引入组件
+```
+import {BaseAlert} from 'react-native-baseitem-laihuihuang';
+```
 * 所有版本：[点击查看](https://dl.bintray.com/azhon/azhon/com/azhon/appupdate/)
-
-* 简单用法：创建`DownloadManager`，更多用法请查看Demo
-
 ```
  render() {
         return (
@@ -49,8 +45,14 @@
         )
     }
 ```
-* 显示对话框   this.alertView.showAlert()
-* 隐藏对话框   this.alertView.showAlert()
+* 显示对话框  
+```
+this.alertView.show()
+```
+* 显示对话框  
+```
+this.alertView.hide()
+```
 
 ### BaseAlert：配置文档
 > 初始化使用`DownloadManager.getInstance(this)`
