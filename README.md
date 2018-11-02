@@ -4,7 +4,6 @@
 * [效果图](#效果图)
 * [功能介绍](#功能介绍)
 * [DownloadManager](#downloadmanager配置文档)
-* [UpdateConfiguration](#updateconfiguration配置文档)
 * [使用步骤](#使用步骤)
 * [Demo下载体验](#demo下载体验)
 * [版本更新记录](#版本更新记录)
@@ -50,22 +49,6 @@ apkDescription | 更新描述  | null | false
 apkSize | 新版本的安装包大小（单位M）  | null | false
 authorities | 兼容Android N uri授权  | 应用包名 | false
 
-### UpdateConfiguration：配置文档
-属性      | 描述		| 默认值
-:-------- | :-------- | :--------
-notifyId | 通知栏消息id  | 1011
-notificationChannel | 适配Android O的渠道通知 | 详情查阅源码
-httpManager | 设置自己的下载过程  | null
-breakpointDownload | 是否需要支持断点下载  | true
-enableLog | 是否需要日志输出  | true
-onDownloadListener | 下载过程的回调  | null
-jumpInstallPage | 下载完成是否自动弹出安装页面  | true
-showNotification | 是否显示通知栏进度（后台下载提示）  | true
-forcedUpgrade | 是否强制升级  | false
-onButtonClickListener | 按钮点击事件回调  | null
-dialogImage | 对话框背景图片资源(图片规范参考demo)  | -1
-dialogButtonColor | 对话框按钮的颜色  | -1
-dialogButtonTextColor | 对话框按钮的文字颜色  | -1
 
 ### 使用步骤
 * `build.gradle`进行依赖
